@@ -1,0 +1,12 @@
+img{
+    width: 120px;
+    height: 60px;
+}
+
+main{
+    min-height: 80vh;
+}
+
+.social-icon {
+    margin: 20px 10px;
+  }
