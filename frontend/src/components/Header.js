@@ -1,20 +1,46 @@
 import React from "react"
 import { Navbar, Nav, Container } from "react-bootstrap"
+import { LinkContainer } from "react-router-bootstrap"
 import NavDropdown from "react-bootstrap/NavDropdown"
-import logo from "./SampleLogo.png"
+import logo from "../sample_images/SampleLogo.png"
 const Header = () => {
   return (
     <header>
       {/* setting vairant to dark will make the text in nav bar light for readability */}
-      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect className="headerNav">
+      <Navbar
+        bg='primary'
+        variant='dark'
+        expand='lg'
+        collapseOnSelect
+        className='headerNav'
+      >
         <Container>
-        <Navbar.Brand href="/"><img src={logo} alt="Logo"></img></Navbar.Brand>
+          {/* because we are using react bootstrap for routes need to use */}
+          {/* Link container for all routes */}
+          <LinkContainer to='/'>
+            <Navbar.Brand>
+              <img src={logo} alt='Logo' className='logo'></img>
+            </Navbar.Brand>
+          </LinkContainer>
+
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className="ms-auto">
-              <Nav.Link href='/plan'><i class="fa-solid fa-list-check"></i> Plans</Nav.Link>
-              <Nav.Link href='/content'><i class="fa-brands fa-youtube"></i> Content</Nav.Link>
-              <Nav.Link href='/about us'><i class="fa-solid fa-circle-info"></i> Blog</Nav.Link>
+            <Nav className='ms-auto'>
+              <LinkContainer to='/Plans'>
+                <Nav.Link>
+                  <i class='fa-solid fa-list-check'></i> Plans
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/Content'>
+                <Nav.Link>
+                  <i class='fa-brands fa-youtube'></i> Content
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/Blog'>
+                <Nav.Link>
+                  <i class='fa-solid fa-list-check'></i> Blog
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>

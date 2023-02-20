@@ -1,12 +1,19 @@
-img{
-    width: 120px;
-    height: 60px;
+main{
+    /* min-height: 80vh; */
 }
 
-main{
-    min-height: 80vh;
+.logo{
+    width: 120px;
+    height: 60px;
 }
 
 .social-icon {
     margin: 20px 10px;
   }
+
+.home{
+    background-color: gray;
+    /* background-image: url("./sample_images/CBum.jpg"); */
+    /* background-repeat: no-repeat; */
+    /* text-align: center; */
+}
