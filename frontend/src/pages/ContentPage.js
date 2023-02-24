@@ -1,8 +1,10 @@
 import React from 'react'
-
 const Content = () => {
   return (
-    <h1>Start of Conent Page</h1>
+    <body>
+      <h1>Start of Content Page</h1>
+    </body>
+    
   )
 }
 

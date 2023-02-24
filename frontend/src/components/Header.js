@@ -3,9 +3,10 @@ import { Navbar, Nav, Container } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../sample_images/SampleLogo.png"
+// import index after navbar to take precedence
 const Header = () => {
   return (
-    <header>
+    <header className="p">
       {/* setting vairant to dark will make the text in nav bar light for readability */}
       <Navbar
         bg='primary'
