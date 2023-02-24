@@ -1,16 +1,5 @@
 main{
-    min-height: 90vh;
-}
-
-.logo{
-    width: 120px;
-    height: 60px;
-}
-
-.profile{
-
-        width: 640px;
-        height: 360px;
+    min-height: 82vh;
 }
 
 .social-icon {
@@ -24,8 +13,28 @@ main{
     /* text-align: center; */
 }
 
-.statement{
-    color: #ffff;
+/* header */
+.logo{
+    width: 120px;
+    height: 60px;
+}
+
+/* footer */
+.bookNow{
+    width: 100%;
+    background-color: grey;
+    text-align: center;
+    font-style: italic;
+    color:black;
+    
+    font-weight: 600;
+}
+
+/* home page */
+.profile{
+
+        width: 640px;
+        height: 360px;
 }
 
 /* Plans Styling */
