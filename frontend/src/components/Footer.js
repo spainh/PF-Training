@@ -37,8 +37,7 @@ const Footer = () => {
         </Container>
       </Navbar>
       <Container>
-        <Row>
-          <Col className='text-center'>
+        <div className='text-center'>
             <a href='http://www.twitter.com'>
               <i className='social-icon fa-brands fa-twitter'></i>
             </a>
@@ -51,11 +50,8 @@ const Footer = () => {
             <a href='mailto: spainh@sunypoly.edu'>
               <i className='social-icon fa-solid fa-envelope'></i>
             </a>
-          </Col>
-        </Row>
-        <Row>
-          <Col className='text-center'>Copy &copy; Bulking Buddies Llc</Col>
-        </Row>
+            </div>
+          <div className='text-center'>Copy &copy; Bulking Buddies Llc</div>
       </Container>
     </footer>
   )
