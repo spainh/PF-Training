@@ -1,0 +1,113 @@
+.sidenav {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    inset: 15% 85% 85% 0 ;
+}
+
+.sidenav-mobile{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .ul-item{
+    display: flex;
+    flex-direction: column;
+    margin-block: 1rem;
+    list-style: none;
+}
+
+nav .ul-item.oicon a {
+    display: none;
+}
+
+nav .ul-item.oicon li::after {
+    content: '';
+    position: absolute;
+    width: 1%;
+    height: 4%;
+    background-color: '#';
+}
+
+nav .ul-item.oicon li::after {
+    content: '';
+    position: relative;
+    width: 1%;
+    height: 4%;
+    right: 0;
+}
+
+nav .ul-item li{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+    padding-block: 1.2rem;
+    margin-block: 1rem;
+}
+
+nav .ul-item li:hover{
+    filter: brightness(20%);
+}
+
+nav .ul-item li .icon{
+    color: #1f9bcf;
+    margin-inline: 1rem;
+    font-size: 30px;
+}
+
+nav .ul-item li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    border-left: 1px solid;
+    padding-left: 2rem;
+}
+
+nav .ul-item li a:hover {
+    color: #1f9bcf;
+    
+}
+
+nav .ul-item li:hover {
+    transition: 1s ease;
+}
+
+.menu-icon {
+    margin-inline: 1rem;
+    
+}
+
+.menu-icon .menu{
+    color: #1f9bcf;
+    margin-block: 1rem;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@media (max-width:900px){
+    .sidenav-mobile{
+
+    }
+
+    nav .ul-item{
+        display: none;
+    }
+
+    nav .ul-item.oicon{
+        display: flex;
+    }
+
+    .menu-icon{
+        display: none;
+    }
+
+    nav .ul-item li .icon{
+        /* will decrease the size of the icons based on screen width */
+        font-size: clamp(1rem,2vw + 1rem, 4rem);
+    }
+}
+
+

@@ -2,14 +2,14 @@ import React from "react"
 import { Navbar, Nav, Container } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import NavDropdown from "react-bootstrap/NavDropdown"
-import logo from "../sample_images/SampleLogo.png"
+import logo from "../sample_images/logo1.png"
 // import index after navbar to take precedence
 const Header = () => {
   return (
-    <header className="p">
+    <header className="">
       {/* setting vairant to dark will make the text in nav bar light for readability */}
       <Navbar
-        bg='primary'
+        bg='info'
         variant='dark'
         expand='lg'
         collapseOnSelect

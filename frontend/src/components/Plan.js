@@ -23,7 +23,7 @@ const Plan = ({ plan }) => {
           <Card.Text as='h3'>
             <div className="my-3">${plan.price}</div>
             </Card.Text>
-          <Button className="btn-primary rounded">Get Started</Button>
+          <Button className="btn-success rounded">Get Started</Button>
         </Card.Body>
       </Card>
     </>

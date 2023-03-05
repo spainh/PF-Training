@@ -3,9 +3,9 @@ import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="bookNow">
       {/* fullwidth blended in (grey) quickbook appointment navbar */}
-      <Navbar className='bookNow'>
+      <Navbar>
         <Container>
           <Nav.Link>
             <p>Book Appointment</p>

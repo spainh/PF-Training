@@ -6,7 +6,7 @@ const Plans = () => {
   return ( 
   <>
   <Container>
-    <h1 className="ms-auto py-3">Current Plans</h1>
+    <h1 className="ms-auto py-3 planCard">Plans</h1>
     <Row>
       {plan.map((plan) => (
         <Col sm={13} md={6} lg={4} xl={3}>

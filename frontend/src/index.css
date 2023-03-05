@@ -1,5 +1,9 @@
+#footer{
+    background-color: #f8f8f8;
+}
+
 main{
-    min-height: 82vh;
+    min-height: 81vh;
 }
 
 .social-icon {
@@ -7,7 +11,7 @@ main{
   }
 
 .home{
-    background-color: gray;
+    background-color: #E9E9E9;
     /* background-image: url("./sample_images/CBum.jpg"); */
     /* background-repeat: no-repeat; */
     /* text-align: center; */
@@ -22,11 +26,11 @@ main{
 /* footer */
 .bookNow{
     width: 100%;
-    background-color: grey;
+    background-color: #E9E9E9;
     text-align: center;
     font-style: italic;
     color:black;
-    
+
     font-weight: 600;
 }
 
@@ -41,5 +45,7 @@ main{
 .planCard{
     text-align: center;
 }
+
+
 
 
