@@ -1,8 +1,17 @@
-import React from 'react'
+import React from "react"
+import { Container } from "react-bootstrap"
+import Slider from '../components/Slider'
 
 const Blog = () => {
   return (
-    <h1>Start of Blog Page</h1>
+    <div>
+      <Container>
+        <h1 className='text-center py-3'>About Us</h1>
+        <div className="text-center">
+        <Slider/>
+        </div>
+      </Container>
+    </div>
   )
 }
 

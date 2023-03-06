@@ -3,7 +3,7 @@
 }
 
 main{
-    min-height: 81vh;
+    min-height: 83.1vh;
 }
 
 .social-icon {
@@ -46,6 +46,11 @@ main{
     text-align: center;
 }
 
+/* blog page */
+.carousel-item{
+    width: 50%;
+    
+}
 
 
 
