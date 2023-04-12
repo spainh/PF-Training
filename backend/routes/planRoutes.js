@@ -11,7 +11,9 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const plans = await Plan.find({})
-
+    // tests actions 
+    // res.status(401)
+    // throw new Error('Not Authorized')
     res.json(plans)
   })
 )
