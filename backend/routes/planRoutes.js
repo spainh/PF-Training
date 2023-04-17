@@ -11,7 +11,7 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const plans = await Plan.find({})
-    // tests actions 
+    // tests actions
     // res.status(401)
     // throw new Error('Not Authorized')
     res.json(plans)
@@ -31,11 +31,13 @@ router.get(
     } else {
       // will format due to error handling middleware
       res.status(404)
-      throw new Error('Product not found')
+      throw new Error("Product not found")
     }
-    
+
     res.json(plans)
   })
 )
+
+
 
 export default router

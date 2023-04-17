@@ -9,10 +9,10 @@ const Loader = () => {
       style={{
         width: "100px",
         height: "100px",
-        margin: "ms-auto",
+        margin: "auto",
+        // display:'block'
       }}
     >
-        <span class='sr-only'>Loading...</span>
     </Spinner>
   )
 }
