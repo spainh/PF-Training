@@ -10,6 +10,12 @@ import UserDetailsPage from "./pages/UserDetailsPage"
 import {Route, Routes } from "react-router-dom"
 import PlanPage from "./pages/PlanPage"
 import PlaceOrderPage from "./pages/PlaceOrderPage"
+import ArmsPage from "./pages/ArmsPage"
+import ShouldersPage from "./pages/ShouldersPage"
+import AbsPage from "./pages/AbsPage"
+import BackPage from "./pages/BackPage"
+import LegsPage from "./pages/LegsPage"
+import ChestPage from "./pages/ChestPage"
 function App() {
   return (
     <body>
@@ -25,6 +31,12 @@ function App() {
             {/* <Route path='/Plan/:id' element={<PlanPage/>} /> */}
             <Route path='/Credentials' element={<UserDetailsPage/>}/>
             <Route path='/PlaceOrder' element={<PlaceOrderPage/>}/>
+            <Route path="/Content/arms" element={<ArmsPage/>}/>
+            <Route path="/Content/shoulders" element={<ShouldersPage/>}/>
+            <Route path="/Content/abs" element={<AbsPage/>}/>
+            <Route path="/Content/back" element={<BackPage/>}/>
+            <Route path="/Content/legs" element={<LegsPage/>}/>
+            <Route path="/Content/chest" element={<ChestPage/>}/>
           </Routes>
       </main>
       <Footer />

@@ -9,6 +9,7 @@ import CheckoutSteps from "../components/CheckoutSteps"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
 import { register } from "../actions/usersAction"
+import axios from 'axios'
 
 
 const UserDetailsPage = ({ location, history }) => {
@@ -24,6 +25,14 @@ const UserDetailsPage = ({ location, history }) => {
   const userRegister = useSelector((state) => state.userRegister)
   const { loading, error, userInfo } = userRegister
 
+    const handling = (e) => {
+      axios
+  .get("http//localhost:5000/")
+  .then((response) => {
+    displayOutput(response);
+  })
+  .catch((err) => console.log(err));
+    }
 // const redirect = location.search ? location.search.split('=')[1] : '/'
   
 
@@ -41,6 +50,7 @@ const UserDetailsPage = ({ location, history }) => {
       dispatch(register(fName, lName, email, phone))
     }
   }
+  
   
   return (
     <div>
