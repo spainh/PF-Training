@@ -29,7 +29,7 @@ const UserDetailsPage = ({ location, history }) => {
       axios
   .get("http//localhost:5000/")
   .then((response) => {
-    displayOutput(response);
+    // displayOutput(response);
   })
   .catch((err) => console.log(err));
     }
