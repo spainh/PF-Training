@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
-import { redirect, useNavigate } from "react-router-dom"
+import { Navigate, Redirect, useNavigate, createSearchParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { Form, Button, Row, Col } from "react-bootstrap"
 import FormContainer from "../components/FormContainer"
@@ -9,9 +9,9 @@ import CheckoutSteps from "../components/CheckoutSteps"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
 import { register } from "../actions/usersAction"
-import axios from 'axios'
+import { useSearchParams } from "react-router-dom"
 
-
+import axios from "axios"
 const UserDetailsPage = ({ location, history }) => {
   const [fName, setFName] = useState("")
   const [lName, setLName] = useState("")
@@ -21,66 +21,74 @@ const UserDetailsPage = ({ location, history }) => {
   const [message, setMessage] = useState(null)
 
   const dispatch = useDispatch()
-
+  const navigate = useNavigate();
   const userRegister = useSelector((state) => state.userRegister)
-  const { loading, error, userInfo } = userRegister
+  // const { loading, error, userInfo } = userRegister
+  const [searchparams] = useSearchParams()
 
-    const handling = (e) => {
-      axios
-  .get("http//localhost:5000/")
-  .then((response) => {
-    // displayOutput(response);
-  })
-  .catch((err) => console.log(err));
-    }
-// const redirect = location.search ? location.search.split('=')[1] : '/'
-  
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     history.push(redirect)
-  //   }
-  // }, [history, userInfo, redirect])
+  console.log(searchparams.get("data"))
 
   const submitHandler = (e) => {
     e.preventDefault()
     if (email !== confirmEmail) {
       setMessage("Email address does not match")
     } else {
-      dispatch(register(fName, lName, email, phone))
+      console.log(fName, lName, confirmEmail, phone)
+      const payload = {
+        fName: fName,
+        lName: lName,
+        email: confirmEmail,
+        phone: phone,
+      }
+      axios
+        .post("/add", payload)
+        .then(() => {
+          console.log("added data from axios")
+        })
+        .catch((e) => {
+          console.log("unable to add data from axios: " + e)
+        })
+        navigate({
+          pathname:'/PlaceOrder',
+          search: createSearchParams({
+          first: fName,
+          last: lName,
+          emailIs: email,
+          number: phone
+          }).toString()
+        })
     }
   }
-  
-  
+
   return (
     <div>
       <FormContainer>
         <CheckoutSteps step1 />
         <h1 className='pb-3'>User Details</h1>
         {message && <Message variant='danger'>{message}</Message>}
-        {error && <Message variant='danger'>{error}</Message>}
-              {loading && <Loader />}
+        {/* {error && <Message variant='danger'>{error}</Message>}
+              {loading && <Loader />} */}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='fName'>
             <Form.Label>First Name</Form.Label>
             <Form.Control
               value={fName}
-              placeholder='Enter First Name'
-              type='fname'
+              placeholder='Enter first name'
+              type='text'
               onChange={(e) => setFName(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Form.Group controlId='fName'>
+          <Form.Group>
             <Form.Label>Last Name</Form.Label>
             <Form.Control
               value={lName}
-              placeholder='Enter Last Name'
-              type='lname'
+              placeholder='Enter last name'
+              type='text'
               onChange={(e) => setLName(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Form.Group controlId='email'>
-            <Form.Label>Email Address</Form.Label>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
             <Form.Control
               value={email}
               placeholder='Enter email address'
@@ -88,25 +96,25 @@ const UserDetailsPage = ({ location, history }) => {
               onChange={(e) => setEmail(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Form.Group controlId='confirmEmail'>
-          <Form.Label>Confirm Email</Form.Label>
-          <Form.Control
-            type='email'
-            placeholder='Confirm email'
-            value={confirmEmail}
-            onChange={(e) => setConfirmEmail(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-          <Form.Group controlId='phone'>
+          <Form.Group>
+            <Form.Label>Confirm Email Address</Form.Label>
+            <Form.Control
+              value={confirmEmail}
+              placeholder='Confirm email address'
+              type='email'
+              onChange={(e) => setConfirmEmail(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
+          <Form.Group>
             <Form.Label>Phone Number</Form.Label>
             <Form.Control
               value={phone}
               placeholder='Enter phone number'
-              type='phone'
+              type='tel'
               onChange={(e) => setPhone(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button type='submit' variant='primary'>
+          <Button onClick={submitHandler} variant='primary'>
             Continue
           </Button>
         </Form>

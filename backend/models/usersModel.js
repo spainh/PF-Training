@@ -1,11 +1,11 @@
 import mongoose from "mongoose"
 
 const usersSchema = new mongoose.Schema({
-fname: {
+  fName: {
     type: String,
     required: true,
   },
-lname: {
+  lName: {
     type: String,
     required: true,
   },
@@ -14,12 +14,11 @@ lname: {
     required: true,
   },
   phone: {
-    type: Number,
+    type: String,
     required: true,
   },
-
 })
-
-const User = mongoose.model("User", usersSchema)
+// should "User" be switched to users to match mongo db collection name??
+const User = mongoose.model("users", usersSchema)
 
 export default User

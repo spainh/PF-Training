@@ -18,9 +18,13 @@ const Sidebar = () => {
     <div className={active ? "sidenav" : "sidenav-mobile"}>
       <div className='menu-icon' onClick={activateNav}>
         {!active ? (
+          <div>
           <IoMdMenu className='menu' />
+          </div>
         ) : (
+          <div>
           <IoMdClose className='menu' />
+          </div>
         )}
       </div>
 

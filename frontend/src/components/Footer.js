@@ -37,7 +37,7 @@ const Footer = () => {
             <i className='social-icon fa-solid fa-envelope'></i>
           </a>
         </div>
-        <div className='text-center'>Copy &copy; Bulking Buddies Llc</div>
+        <div className='text-center'>&copy; Bulking Buddies Llc</div>
       </Container>
     </footer>
   )

@@ -4,6 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import { planListReducer, planDetailsReducer } from "./reducers/planReducers"
 import { checkOutReducer } from "./reducers/checkOutReducer"
 import { userRegisterReducer } from "./reducers/usersReducer"
+// import {plansReducer} from './reducers/plansReducer'
 const reducer = combineReducers({
   planList: planListReducer,
   planDetails: planDetailsReducer,

@@ -7,54 +7,67 @@ import Loader from "../components/Loader"
 import { useNavigate } from "react-router-dom"
 import FormContainer from "../components/FormContainer"
 import CheckoutSteps from "../components/CheckoutSteps"
-import {PaypalButton} from '@paypal/react-paypal-js'
+import { PaypalButton } from "@paypal/react-paypal-js"
+import { useSearchParams } from "react-router-dom"
+import { First } from "react-bootstrap/esm/PageItem"
 const PlaceOrderPage = () => {
   // const [sdkReady, setSdkReady] = useState(false)
-return(
-<>
-<h1>Place Order Page</h1>
-</>
-  
-)}
+  const [searchparams] = useSearchParams()
+  console.log(searchparams.get("first"))
+  console.log(searchparams.get("last"))
+  console.log(searchparams.get("emailIs"))
+  console.log(searchparams.get("number"))
+  console.log(searchparams.get("data"))
 
-  // specify plan in here
-  // const handleCheckout = async (e) => {
-  //   await axios
-  //     .post("http://localhost:5000/create-checkout-session")
-  //     .then((res) => {
-  //       // if (res.data.url) {
-  //       //   window.location.href = res.data.url
-  //       // }
-  //     })
-  //     .catch((err) => console.log(err.message))
-  // }
-//   useEffect(() => {
-//     const addPaypalScript = async () => {
-//       const { data: clientId } = await axios.get("/api/config/paypal")
-//       // console.log(clientId)
-//       const script = document.createElement("script")
-//       script.type = "text/javascript"
-//       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
-//       script.async = true
-//       script.onload = () => {
-//         setSdkReady(true)
-//       }
-//       document.body.appendChild(script)
-//     }
+  return (
+    <div>
+      <FormContainer>
+        <CheckoutSteps step1 step2 />
+        <div className='planCard'>
+          <h1 className='pb-3'>Place Order</h1>
+        </div>
+        {/* {message && <Message variant='danger'>{message}</Message>} */}
+        {/* {error && <Message variant='danger'>{error}</Message>}
+             {loading && <Loader />} */}
+        <Form onSubmit={"submitHandler"}>
+          <Form.Group>
+            <Form.Label>First Name</Form.Label>
+            <div>
+              <h3>{searchparams.get("first")}</h3>
+            </div>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Last Name</Form.Label>
+            <div>
+              <h3>{searchparams.get("last")}</h3>
+            </div>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <div>
+              <h3>{searchparams.get("emailIs")}</h3>
+            </div>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Phone Number</Form.Label>
+            <div>
+              <h3>{searchparams.get("number")}</h3>
+            </div>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Plan</Form.Label>
+            <div>
+              <h3>{searchparams.get("data")}</h3>
+            </div>
+          </Form.Group>
 
-//     addPaypalScript()
-//   })
-//   const successPaymentHandler = () =
-//   return (
-//     <div>
-//       <CheckoutSteps step1 step2 step3 step4 />
-//       <h1>start of place order screen</h1>
-//       <Form>
-//         <PaypalButton amount onSuccess={successPaymentHandler}/>
-//         {/* <button onClick={() => handleCheckout()}>Checkout</button> */}
-//       </Form>
-//     </div>
-//   )
-// }
+          <Button onClick={"submitHandler"} variant='primary'>
+            Sign Up!
+          </Button>
+        </Form>
+      </FormContainer>
+    </div>
+  )
+}
 
 export default PlaceOrderPage
