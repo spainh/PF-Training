@@ -23,10 +23,14 @@
   },
   "homepage": "https://github.com/spainh/PF-Training#readme",
   "dependencies": {
+    "cors": "2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
-    "mongoose": "^7.0.2"
+    "mongoose": "^7.0.2",
+    "node-fetch": "^3.3.1",
+    "save": "^2.9.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
